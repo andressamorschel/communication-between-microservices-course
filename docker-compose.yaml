@@ -1,6 +1,27 @@
 version: "3.4"
 
 services:
+  auth-api:
+    build: './auth-api'
+    container_name: auth-api
+    environment:
+      - PORT=8081
+    ports:
+      - 8081:8081
+  product-api:
+    build: './product-api'
+    container_name: product-api
+    environment:
+      - PORT=8080
+    ports:
+      - 8080:8080
+  sales-api:
+    build: './sales-api'
+    container_name: sales-api
+    environment:
+      - PORT=9090
+    ports:
+      - 9090:9090
   auth-db:
     image: postgres:11
     container_name: auth-db
@@ -22,7 +43,7 @@ services:
     ports:
       - 5433:5432
   sales-db:
-    container_name: mongo
+    container_name: sales_db
     image: mongo
     ports:
       - "27017:27017"
