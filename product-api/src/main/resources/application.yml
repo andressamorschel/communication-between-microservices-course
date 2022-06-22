@@ -1,0 +1,6 @@
+application:
+  server: 8070
+
+spring:
+  application:
+    name: product-api
